@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.2.3.js"></script>
+    <script src="Scripts/knockout-3.4.0.debug.js"></script>
+    <script src="Scripts/knockout.Extend.js"></script>
+</head>
+<body>
+    <input type="text" data-bind="currency:num,accuracy:3" style="width:500px;text-align:right" />
+    <button data-bind="click:changNum">ChangNum</button>
+    <script>
+        var vm = {
+            num: ko.observable(123),
+            changNum: function () {
+                vm.num(345);
+            }
+        }
+        ko.applyBindings(vm);
+    </script>
+</body>
+</html>
